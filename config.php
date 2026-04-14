@@ -1,7 +1,12 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "ecommerce");
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "ecommerce_db";
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
